@@ -25,7 +25,7 @@ def clean_text(text):
     return " ".join(tokens)
 
 # App UI
-st.title("🛡️ Hate Speech Detection")
+st.title("Hate Speech Detection")
 user_input = st.text_area("Enter a tweet or text to analyze")
 
 if st.button("Classify"):
@@ -34,8 +34,8 @@ if st.button("Classify"):
     result = model.predict(vec)[0]
 
     if result == 0:
-        st.error("⚠️ Hate Speech")
+        st.error("Hate Speech")
     elif result == 1:
-        st.warning("🚨 Offensive Language")
+        st.warning("Offensive Language")
     else:
-        st.success("✅ Neutral / Neither")
+        st.success("Neutral / Neither")
